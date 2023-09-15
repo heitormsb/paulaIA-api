@@ -21,7 +21,7 @@ num_to_char = StringLookup(
     vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True
 )
 
-prediction_model = tf.keras.models.load_model('/Users/hmsb/Desktop/dtsetIA/API/fast_api_simples/app/api/v1/my_model5')
+prediction_model = tf.keras.models.load_model('app/api/v1/my_model5')
 
 def get_message() -> str:
     message = Message(content="Hello, FastAPI with DDD and Poetry!")
@@ -86,7 +86,7 @@ def decode_prediction(pred):
 
 def IA(image_bytes):
     # img = preprocess_image('/Users/hmsb/Desktop/dtsetIA/API/J.png')
-    print(image_bytes)
+    # print(image_bytes)
 
     image_decoded = tf.image.decode_png(image_bytes, 1)
 
