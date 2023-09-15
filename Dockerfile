@@ -14,11 +14,13 @@ RUN poetry config virtualenvs.create false \
 
 COPY ./requirements.txt /code/requirements.txt
 
+# RUN pip install -r requirements.txt
+
 # Creating folders, and files for a project:
 COPY . /app
 
 # Expose port
-EXPOSE 8000
+EXPOSE 8080
 
 # Run the application:
-CMD ["uvicorn", "app.main:app", "--reload"]
+CCMD ["uvicorn", "app.main:app", "--port", "8080", "--reload"]
