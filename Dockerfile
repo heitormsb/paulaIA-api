@@ -20,7 +20,7 @@ COPY ./requirements.txt /code/requirements.txt
 COPY . /app
 
 # Expose port
-EXPOSE 8080
+EXPOSE 8000
 
 # Run the application:
-CMD ["uvicorn", "app.main:app", "--port", "8080", "--reload"]
+CMD ["uvicorn", "app.main:app", "--port", "8000", "--reload"]
