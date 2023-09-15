@@ -23,4 +23,4 @@ COPY . /app
 EXPOSE 8080
 
 # Run the application:
-CCMD ["uvicorn", "app.main:app", "--port", "8080", "--reload"]
+CMD ["uvicorn", "app.main:app", "--port", "8080", "--reload"]
