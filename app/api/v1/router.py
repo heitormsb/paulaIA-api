@@ -20,5 +20,5 @@ async def ia1(file: UploadFile = File(...)):
     else:
         image_bytes = await file.read()
             
-        return {"message": IA2(image_bytes)}
+        return {"Henrique": IA2(image_bytes), "Heitor" : IA(image_bytes)[0]}
         # image = tf.image.decode_image(image_bytes)
