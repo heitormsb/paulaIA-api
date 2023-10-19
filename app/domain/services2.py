@@ -9,8 +9,8 @@ from sklearn.exceptions import InconsistentVersionWarning
 #from tensorflow.keras.preprocessing import image
 
 def process(image):   # Loading the image
-    caminho_imagem_png = image
-    imagem_cinza = cv2.imread(caminho_imagem_png, cv2.IMREAD_GRAYSCALE)
+    imagem_cinza = image
+#    imagem_cinza = cv2.imread(caminho_imagem_png, cv2.IMREAD_GRAYSCALE)
 
     # Applying a blur to reduce noise
     imagem_cinza = cv2.GaussianBlur(imagem_cinza, (5, 5), 0)
