@@ -58,7 +58,7 @@ def IA2(image_bytes):
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
         converted_images = process(image_decoded)
-        modelo_carregado = joblib.load('/Users/henriquenino/Desktop/PEBIX-PAULA/aprendizado/mlp3')
+        modelo_carregado = joblib.load('app/api/v1/mlp3')
         typed_story = ""
         for letter in converted_images:
             single_item_array = (np.array(letter)).reshape(1,784)
