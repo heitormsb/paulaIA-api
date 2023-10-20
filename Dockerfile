@@ -8,7 +8,9 @@ RUN pip install poetry
 WORKDIR /app
 COPY poetry.lock pyproject.toml /app/
 
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 # Project initialization:
 RUN poetry config virtualenvs.create false \
