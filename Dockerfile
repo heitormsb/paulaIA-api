@@ -16,8 +16,6 @@ RUN poetry config virtualenvs.create false \
 
 COPY ./requirements.txt /code/requirements.txt
 
-# RUN pip install -r requirements.txt
-
 # Creating folders, and files for a project:
 COPY . /app
 
