@@ -12,6 +12,8 @@ COPY poetry.lock pyproject.toml /app/
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+
 COPY ./requirements.txt /code/requirements.txt
 
 # RUN pip install -r requirements.txt
