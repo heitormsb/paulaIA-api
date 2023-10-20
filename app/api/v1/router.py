@@ -1,6 +1,7 @@
 from fastapi import APIRouter, File, Request, UploadFile
 from app.domain.services import get_message
 from app.domain.services import IA
+from app.domain.services2 import IA2
 import os
 import shutil
 
@@ -18,6 +19,6 @@ async def ia1(file: UploadFile = File(...)):
         return {"error": "No file provided"}
     else:
         image_bytes = await file.read()
-
-        return {"message": IA(image_bytes)}
+            
+        return {"Henrique": IA2(image_bytes), "Heitor" : IA(image_bytes)[0]}
         # image = tf.image.decode_image(image_bytes)
