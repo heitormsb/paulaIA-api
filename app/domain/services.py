@@ -6,6 +6,8 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import StringLookup
 from tensorflow import keras
 
+from app.domain.services3 import cropImg
+
 max_len = 8
 image_width = 128
 image_height = 64+40
@@ -87,6 +89,8 @@ def decode_prediction(pred):
 def IA(image_bytes):
     # img = preprocess_image('/Users/hmsb/Desktop/dtsetIA/API/J.png')
     # print(image_bytes)
+
+    image_bytes = cropImg(image_bytes)
 
     image_decoded = tf.image.decode_png(image_bytes, 1)
 
