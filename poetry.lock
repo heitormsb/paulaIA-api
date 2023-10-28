@@ -1223,6 +1223,25 @@ files = [
 diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
+name = "pytesseract"
+version = "0.3.13"
+description = "Python-tesseract is a python wrapper for Google's Tesseract-OCR"
+optional = false
+python-versions = ">=3.8"
+files = []
+develop = false
+
+[package.dependencies]
+packaging = ">=21.3"
+Pillow = ">=8.0.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/madmaze/pytesseract.git"
+reference = "HEAD"
+resolved_reference = "227d254781b50be640b8be80ca4982b56d8f13c8"
+
+[[package]]
 name = "pytest"
 version = "6.2.5"
 description = "pytest: simple powerful testing with Python"
@@ -1838,4 +1857,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9.12, <3.10"
-content-hash = "7e768e37ddc2a5bb6e1f2a8da6cdae766d05bbc608bafc6ac94a4c4650eebbcf"
+content-hash = "275228ad5781e00fe9bb8cda73996dffb498cc3dda7f515525e3f5407c14d482"
