@@ -4,15 +4,15 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 
-def cropImg(path, aa=None):
+def cropImg(path):
   # Read image from which text needs to be extracted
   # img = cv2.imread("/content/by_field/hsf_0/upper/49/49_00001.png")
 
-  if aa == 'a':
-    img = cv2.imread(path)
-  else:
-    nparr = np.frombuffer(path, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR) 
+  # if aa == 'a':
+    # img = cv2.imread(path)
+  # else:
+  nparr = np.frombuffer(path, np.uint8)
+  img = cv2.imdecode(nparr, cv2.IMREAD_COLOR) 
 
   # Convert the image to gray scale
   gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -43,7 +43,7 @@ def cropImg(path, aa=None):
     # Create a rectangle on a blank image
     # rect = cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    print(w)
+    # print(w) 
     # if w < 25:
     #   continue
 
@@ -60,12 +60,12 @@ def cropImg(path, aa=None):
     # Add height on top of image. Fill with color (255,255,255), that is white
     padded = cv2.copyMakeBorder(cropped, add_height, 0, 0, 0, cv2.BORDER_CONSTANT, value=[255, 255, 255])
 
-    if aa == 'a':
-        cv2.imwrite(f'/home/hmsb/paulaIA-api/PLIM_TESTE.png', padded)
+    # if aa == 'a':
+        # cv2.imwrite(f'/home/hmsb/paulaIA-api/PLIM_TESTE.png', padded)
 
     retval, buffer = cv2.imencode('.png', padded)
     binary_image = buffer.tobytes()
     return binary_image
 
 
-cropImg("/home/hmsb/paulaIA-api/letra/p1.png", aa='a')
+# cropImg("/home/hmsb/paulaIA-api/letra/p1.png", aa='a')
